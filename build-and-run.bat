@@ -1,0 +1,1 @@
+go build github.com/hinst/outist_sample && outist_sample.exe

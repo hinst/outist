@@ -18,7 +18,8 @@ func (this *TWebUI) Prepare() {
 }
 
 func (this *TWebUI) registerFile(file string) {
-	http.HandleFunc(this.URL+"/"+file,
+	var url = this.URL + "/" + file
+	http.HandleFunc(url,
 		func(response http.ResponseWriter, request *http.Request) {
 			http.ServeFile(response, request, FileDirectory+"/"+file)
 		})
