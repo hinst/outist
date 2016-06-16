@@ -47,10 +47,10 @@ func (this *TTextLog) WriteL(level int, text string) {
 	}
 }
 
-func StartGlobalLog(appDirectory string) {
+func StartGlobalLog(logDirectory string) {
+	os.MkdirAll(logDirectory, 0666)
 	GlobalLog = CreateTextLog()
-	GlobalLog.FilePath = appDirectory + "/" + logFolderName + "/" + FormateDateForFileName(time.Now()) + ".txt"
-	GlobalLog.StandardOutputEnabled = true
+	GlobalLog.FilePath = logDirectory + "/" + FormateDateForFileName(time.Now()) + ".txt"
 	GlobalLog.Prepare()
 }
 
@@ -62,5 +62,5 @@ func GetCallerName(level int) string {
 }
 
 func init() {
-	StartGlobalLog()
+	GlobalLog = CreateTextLog()
 }
