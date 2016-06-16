@@ -60,3 +60,7 @@ func GetCallerName(level int) string {
 	f := runtime.FuncForPC(callers[0])
 	return f.Name()
 }
+
+func init() {
+	StartGlobalLog()
+}

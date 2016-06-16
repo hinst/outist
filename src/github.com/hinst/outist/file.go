@@ -3,7 +3,10 @@ package outist
 import (
 	"io/ioutil"
 	"os"
+	"path/filepath"
 )
+
+var appDirectory, _ = filepath.Abs(filepath.Dir(os.Args[0]))
 
 func WriteStringToFile(filePath, text string) error {
 	var data = []byte(text)
