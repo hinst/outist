@@ -8,6 +8,11 @@ type TWebUI struct {
 	URL string
 }
 
+func CreateWebUI() *TWebUI {
+	var result = &TWebUI{}
+	return result
+}
+
 func (this *TWebUI) Prepare() {
 	this.registerFile("concise.css")
 }
