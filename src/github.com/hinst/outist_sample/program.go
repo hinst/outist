@@ -8,6 +8,6 @@ import (
 
 func main() {
 	outist.StartGlobalLog(outist.AppDirectory + "/userLog") // optional
-	outist.CreateWebUI().Prepare()
+	outist.CreateWebUI().Start()
 	http.ListenAndServe(":9000", nil)
 }

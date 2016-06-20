@@ -36,7 +36,7 @@ func (this *TUserMan) GetUserBackupFilePath() string {
 	return this.Directory + "/" + this.GetUserBackupFileName()
 }
 
-func (this *TUserMan) Prepare() {
+func (this *TUserMan) Start() {
 	this.Load()
 	if false == this.getUserByName(AdminUserName).Valid() {
 		this.AddAdminUser()

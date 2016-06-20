@@ -20,9 +20,21 @@ func CreateWebUI() *TWebUI {
 	return result
 }
 
-func (this *TWebUI) Prepare() {
+func (this *TWebUI) Start() {
+	if this.URL == "" {
+		this.URL = "/users"
+	}
+	if nil == this.UserMan {
+		this.prepareNewUserMan()
+	}
 	this.registerFile("concise.css")
 	http.HandleFunc(this.URL+"/page", this.ProcessPageRequest)
+}
+
+func (this *TWebUI) prepareNewUserMan() {
+	this.UserMan = CreateUserMan()
+	this.UserMan.Directory = AppDirectory + "/data/users"
+	this.UserMan.Start()
 }
 
 func (this *TWebUI) registerFile(file string) {
