@@ -2,8 +2,8 @@ package outist
 
 import (
 	"bytes"
-	"html/template"
 	"net/http"
+	"text/template"
 )
 
 const PageDirectory = "src/github.com/hinst/outist_page"
