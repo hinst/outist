@@ -28,6 +28,8 @@ func (this *TWebUI) Start() {
 		this.prepareNewUserMan()
 	}
 	this.registerFile("concise.css")
+	this.registerFile("jquery-3.0.0.js")
+	this.registerFile("login.js")
 	http.HandleFunc(this.URL+"/page", this.ProcessPageRequest)
 }
 

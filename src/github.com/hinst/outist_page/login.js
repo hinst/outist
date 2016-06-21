@@ -1,2 +1,6 @@
 /// <reference path="common.js" />
-/// <reference path="jquery-3.0.0.js" />
+var receiveLoginButtonClick = function () {
+	console.log("!");
+};
+$("#loginButton").on("click", receiveLoginButtonClick);
+
